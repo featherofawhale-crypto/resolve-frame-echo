@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "tests_run": 6,
+  "scope": "offline_numeric_expressions_and_graph_contract",
+  "resolve_loaded": false,
+  "native_rasterization_tested": false
+}

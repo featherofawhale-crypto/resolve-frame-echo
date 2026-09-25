@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "sha256": "3a94892d43f4f1d965d19375a681d52627c790745c2e506ad0bd657e25f3b033",
+  "archive_entries": [
+    "Edit/Effects/Frame Echo/抽帧拖影 Frame Echo.setting"
+  ],
+  "native_node_types": [
+    "BezierSpline",
+    "Dimension.OpticalFlow",
+    "DirectionalBlur",
+    "Dissolve",
+    "EllipseMask",
+    "GroupOperator",
+    "PipeRouter",
+    "PolylineMask",
+    "RectangleMask",
+    "TimeStretcher",
+    "Transform",
+    "VectorMotionBlur"
+  ],
+  "native_node_count": 33,
+  "image_inputs": 1,
+  "image_outputs": 1,
+  "published_controls": 26,
+  "external_runtime_dependencies": []
+}

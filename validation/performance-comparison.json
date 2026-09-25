@@ -1,0 +1,35 @@
+{
+  "comparison_target": "first-release-package (local path redacted)",
+  "first_release": {
+    "setting_bytes": 18629,
+    "TimeStretcher": 10,
+    "OpticalFlow": 1,
+    "VectorMotionBlur": 1,
+    "DirectionalBlur": 1,
+    "Transform": 0,
+    "Dissolve": 10
+  },
+  "previous_current_release": {
+    "setting_bytes": 28398,
+    "TimeStretcher": 10,
+    "OpticalFlow": 1,
+    "VectorMotionBlur": 1,
+    "DirectionalBlur": 1,
+    "Transform": 1,
+    "Dissolve": 12,
+    "PolylineMask": 1,
+    "RectangleMask": 1
+  },
+  "performance_fix": {
+    "setting_bytes": 28666,
+    "TimeStretcher": 10,
+    "OpticalFlow": 1,
+    "VectorMotionBlur": 1,
+    "DirectionalBlur": 1,
+    "Transform": 1,
+    "Dissolve": 13,
+    "bypass": "Transform disabled: FE_TransformBypass selects FE_Input before all temporal samples"
+  },
+  "finding": "The first release and previous current release have the same Optical Flow, Vector Motion Blur, Directional Blur, and TimeStretcher counts. The added upstream Transform is the only new image-processing branch placed before all temporal sampling; this build bypasses it while disabled.",
+  "runtime_benchmark": "deferred while an unrelated Resolve render is active"
+}

@@ -1,0 +1,421 @@
+{
+Tools = ordered() {
+FrameEcho = GroupOperator {
+CtrlWZoom = false,
+Inputs = ordered() {
+MainInput1 = InstanceInput { SourceOp = "FE_Input", Source = "Input", },
+Input1 = Input { Value = 0, },
+Input2 = Input { Value = 12, },
+Input3 = Input { Value = 2, },
+Input4 = Input { Value = 0, },
+Input5 = Input { Value = 50, },
+Input6 = Input { Value = 6, },
+Input7 = Input { Value = 1, },
+Input8 = Input { Value = 2, },
+Input9 = Input { Value = 1, },
+Input10 = Input { Value = 1.5, },
+Input11 = Input { Value = 0, },
+Input12 = Input { Value = 16, },
+Input13 = Input { Value = 6, },
+Input15 = Input { Value = 1, },
+Input16 = Input { Value = 1, },
+Input17 = Input { Value = 1, },
+Input18 = Input { Value = 1, },
+Input19 = Input { Value = 0, },
+Input21 = Input { Value = 0, },
+Input14 = Input { Value = { 0.5, 0.5 }, },
+Input22 = Input { Value = 0, },
+Input23 = Input { Value = { 0.5, 0.5 }, },
+Input24 = Input { Value = 1, },
+Input25 = Input { Value = 0, },
+Input26 = Input { Value = { 0.5, 0.5 }, },
+Input20 = InstanceInput { SourceOp = "FE_Pen", Source = "Polyline", Name = "钢笔路径", Page = "Controls", },
+},
+Outputs = { MainOutput1 = InstanceOutput { SourceOp = "FE_PresetOutput", Source = "Output", }, },
+UserControls = ordered() {
+Input5 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 50, INP_MinAllowed = 0, INP_MaxAllowed = 100, INP_MinScale = 0, INP_MaxScale = 100, ICS_ControlPage = "Controls", LINKS_Name = "效果总强度 (%)", },
+Input15 = { LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "启用抽帧", INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+Input1 = { LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "抽帧模式", INP_Integer = true, INP_Passive = true, { CCS_AddString = "目标帧率" }, { CCS_AddString = "每 N 帧更新" }, },
+Input2 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 12, INP_MinAllowed = 0.1, INP_MaxAllowed = 120, INP_MinScale = 0.1, INP_MaxScale = 120, ICS_ControlPage = "Controls", LINKS_Name = "目标帧率 (fps)", },
+Input3 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 2, INP_MinAllowed = 1, INP_MaxAllowed = 120, INP_MinScale = 1, INP_MaxScale = 120, ICS_ControlPage = "Controls", LINKS_Name = "帧间隔 N", INP_Integer = true, },
+Input16 = { LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "启用拖影", INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+Input4 = { LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "拖影模式", INP_Integer = true, INP_Passive = true, { CCS_AddString = "重影叠加" }, { CCS_AddString = "慢快门" }, },
+Input6 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 6, INP_MinAllowed = 0, INP_MaxAllowed = 48, INP_MinScale = 0, INP_MaxScale = 48, ICS_ControlPage = "Controls", LINKS_Name = "重影长度 (帧)", },
+Input7 = { LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 2, INP_MinScale = 0, INP_MaxScale = 2, ICS_ControlPage = "Controls", LINKS_Name = "重影层数 (含当前帧)", INP_Integer = true, INP_Passive = true, { CCS_AddString = "2 层" }, { CCS_AddString = "4 层" }, { CCS_AddString = "8 层" }, },
+Input8 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 2, INP_MinAllowed = 0, INP_MaxAllowed = 10, INP_MinScale = 0, INP_MaxScale = 10, ICS_ControlPage = "Controls", LINKS_Name = "慢快门长度", },
+Input18 = { LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "启用运动模糊", INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+Input9 = { LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 2, INP_MinScale = 0, INP_MaxScale = 2, ICS_ControlPage = "Controls", LINKS_Name = "附加运动模糊", INP_Integer = true, INP_Passive = true, { CCS_AddString = "关闭" }, { CCS_AddString = "定向" }, { CCS_AddString = "放射（中心向外）" }, },
+Input10 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 1.5, INP_MinAllowed = 0, INP_MaxAllowed = 20, INP_MinScale = 0, INP_MaxScale = 20, ICS_ControlPage = "Controls", LINKS_Name = "运动模糊长度 (%)", },
+Input11 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 0, INP_MinAllowed = -180, INP_MaxAllowed = 180, INP_MinScale = -180, INP_MaxScale = 180, ICS_ControlPage = "Controls", LINKS_Name = "定向模糊角度", },
+Input17 = { LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "启用中心保护", INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+Input19 = { LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 6, INP_MinScale = 0, INP_MaxScale = 6, ICS_ControlPage = "Controls", LINKS_Name = "清晰区形状", INP_Integer = true, INP_Passive = true, { CCS_AddString = "椭圆" }, { CCS_AddString = "自定义钢笔" }, { CCS_AddString = "矩形" }, { CCS_AddString = "圆角矩形" }, { CCS_AddString = "菱形" }, { CCS_AddString = "横向带状" }, { CCS_AddString = "纵向带状" }, },
+Input12 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 16, INP_MinAllowed = 0, INP_MaxAllowed = 100, INP_MinScale = 0, INP_MaxScale = 100, ICS_ControlPage = "Controls", LINKS_Name = "中心清晰区半径 (%)", },
+Input13 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 6, INP_MinAllowed = 0, INP_MaxAllowed = 50, INP_MinScale = 0, INP_MaxScale = 50, ICS_ControlPage = "Controls", LINKS_Name = "清晰区柔边 (%)", },
+Input14 = { LINKID_DataType = "Point", INPID_InputControl = "OffsetControl", INP_DefaultX = 0.5, INP_DefaultY = 0.5, ICS_ControlPage = "Controls", LINKS_Name = "清晰区 / 放射中心", },
+Input22 = { INP_External = false, LINKID_DataType = "Number", LBLC_DropDownButton = true, INPID_InputControl = "LabelControl", LBLC_NumInputs = 5, INP_Passive = true, ICS_ControlPage = "Controls", LINKS_Name = "内置变换", },
+Input21 = { LINKID_DataType = "Number", INPID_InputControl = "CheckboxControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, ICS_ControlPage = "Controls", LINKS_Name = "启用内置变换", INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+Input23 = { LINKID_DataType = "Point", INPID_InputControl = "OffsetControl", INP_DefaultX = 0.5, INP_DefaultY = 0.5, ICS_ControlPage = "Controls", LINKS_Name = "位置", },
+Input24 = { LINKID_DataType = "Number", INPID_InputControl = "SliderControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 5, INP_MinScale = 0, INP_MaxScale = 5, ICS_ControlPage = "Controls", LINKS_Name = "缩放", },
+Input25 = { LINKID_DataType = "Number", INPID_InputControl = "ScrewControl", INP_Default = 0, INP_MinAllowed = -360, INP_MaxAllowed = 360, INP_MinScale = -360, INP_MaxScale = 360, ICS_ControlPage = "Controls", LINKS_Name = "旋转", },
+Input26 = { LINKID_DataType = "Point", INPID_InputControl = "OffsetControl", INP_DefaultX = 0.5, INP_DefaultY = 0.5, ICS_ControlPage = "Controls", LINKS_Name = "锚点", },
+},
+ViewInfo = GroupInfo { Pos = { 0, 0 } },
+Tools = ordered() {
+FE_Input = PipeRouter {
+Inputs = {
+},
+ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+
+},
+FE_Transform = Transform {
+Inputs = {
+Input = Input { SourceOp = "FE_Input", Source = "Output", },
+Center = Input { Expression = "FrameEcho.Input23", },
+Pivot = Input { Expression = "FrameEcho.Input26", },
+Size = Input { Expression = "FrameEcho.Input24", },
+Angle = Input { Expression = "FrameEcho.Input25", },
+Edges = Input { Value = 0, },
+Blend = Input { Value = 1, },
+},
+ViewInfo = OperatorInfo { Pos = { 100, -80 } },
+
+},
+FE_Bounds = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_TransformBypass", Source = "Output", },
+SourceTime = Input { Expression = "math.min(comp.RenderEnd,math.max(comp.RenderStart,time))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+
+},
+FE_TransformBypass = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Input", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Transform", Source = "Output", },
+Mix = Input { Expression = "iif(FE_Hold.TransformEnabled>0.5,1,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 160, -80 } },
+
+},
+FE_Hold = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = ":local a=math.ceil(comp.RenderStart); local t=math.max(a,math.floor(time+0.000001)); if self.HoldEnabled<0.5 then return math.min(comp.RenderEnd,t) end; local r=math.max(0.001,comp:GetPrefs(\"Comp.FrameFormat.Rate\")); local mode=self.RateMode; local dep=self.TargetFPS+self.FrameStep; local phase=0; local held=a; for f=a,t-1 do local rate; if mode<0.5 then rate=math.min(1,math.max(0.1,self:GetValue(\"TargetFPS\",f))/r); else rate=1/math.max(1,math.floor(self:GetValue(\"FrameStep\",f)+0.5)); end; local before=math.floor(phase+0.0000001); phase=phase+rate; if math.floor(phase+0.0000001)>before then held=f+1 end; end; return math.min(comp.RenderEnd,held)", },
+InterpolateBetweenFrames = Input { Value = 0, },
+RateMode = Input { Expression = "FrameEcho.Input1", },
+TargetFPS = Input { Expression = "FrameEcho.Input2", },
+FrameStep = Input { Expression = "FrameEcho.Input3", },
+TrailMode = Input { Expression = "FrameEcho.Input4", },
+Strength = Input { Expression = "FrameEcho.Input5", },
+TrailLength = Input { Expression = "FrameEcho.Input6", },
+LayerChoice = Input { Expression = "FrameEcho.Input7", },
+ShutterLength = Input { Expression = "FrameEcho.Input8", },
+MotionMode = Input { Expression = "FrameEcho.Input9", },
+MotionLength = Input { Expression = "FrameEcho.Input10", },
+MotionAngle = Input { Expression = "FrameEcho.Input11", },
+ClearRadius = Input { Expression = "FrameEcho.Input12", },
+ClearFeather = Input { Expression = "FrameEcho.Input13", },
+HoldEnabled = Input { Expression = "FrameEcho.Input15", },
+TrailEnabled = Input { Expression = "FrameEcho.Input16", },
+ClearEnabled = Input { Expression = "FrameEcho.Input17", },
+MotionEnabled = Input { Expression = "FrameEcho.Input18", },
+ClearShape = Input { Expression = "FrameEcho.Input19", },
+TransformEnabled = Input { Expression = "FrameEcho.Input21", },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 0 } },
+UserControls = ordered() {
+RateMode = { LINKS_Name = "抽帧模式", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, { CCS_AddString = "目标帧率" }, { CCS_AddString = "每 N 帧更新" }, },
+TargetFPS = { LINKS_Name = "目标帧率 (fps)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 12, INP_MinAllowed = 0.1, INP_MaxAllowed = 120, INP_MinScale = 0.1, INP_MaxScale = 120, },
+FrameStep = { LINKS_Name = "帧间隔 N", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 2, INP_MinAllowed = 1, INP_MaxAllowed = 120, INP_MinScale = 1, INP_MaxScale = 120, INP_Integer = true, },
+TrailMode = { LINKS_Name = "拖影模式", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, { CCS_AddString = "重影叠加" }, { CCS_AddString = "慢快门" }, },
+Strength = { LINKS_Name = "效果总强度 (%)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 50, INP_MinAllowed = 0, INP_MaxAllowed = 100, INP_MinScale = 0, INP_MaxScale = 100, },
+TrailLength = { LINKS_Name = "重影长度 (帧)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 6, INP_MinAllowed = 0, INP_MaxAllowed = 48, INP_MinScale = 0, INP_MaxScale = 48, },
+LayerChoice = { LINKS_Name = "重影层数 (含当前帧)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "ComboControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 2, INP_MinScale = 0, INP_MaxScale = 2, INP_Integer = true, INP_Passive = true, { CCS_AddString = "2 层" }, { CCS_AddString = "4 层" }, { CCS_AddString = "8 层" }, },
+ShutterLength = { LINKS_Name = "慢快门长度", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 2, INP_MinAllowed = 0, INP_MaxAllowed = 10, INP_MinScale = 0, INP_MaxScale = 10, },
+MotionMode = { LINKS_Name = "附加运动模糊", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "ComboControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 2, INP_MinScale = 0, INP_MaxScale = 2, INP_Integer = true, INP_Passive = true, { CCS_AddString = "关闭" }, { CCS_AddString = "定向" }, { CCS_AddString = "放射（中心向外）" }, },
+MotionLength = { LINKS_Name = "运动模糊长度 (%)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 1.5, INP_MinAllowed = 0, INP_MaxAllowed = 20, INP_MinScale = 0, INP_MaxScale = 20, },
+MotionAngle = { LINKS_Name = "定向模糊角度", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 0, INP_MinAllowed = -180, INP_MaxAllowed = 180, INP_MinScale = -180, INP_MaxScale = 180, },
+ClearRadius = { LINKS_Name = "中心清晰区半径 (%)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 16, INP_MinAllowed = 0, INP_MaxAllowed = 100, INP_MinScale = 0, INP_MaxScale = 100, },
+ClearFeather = { LINKS_Name = "清晰区柔边 (%)", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "SliderControl", INP_Default = 6, INP_MinAllowed = 0, INP_MaxAllowed = 50, INP_MinScale = 0, INP_MaxScale = 50, },
+HoldEnabled = { LINKS_Name = "启用抽帧", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+TrailEnabled = { LINKS_Name = "启用拖影", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+ClearEnabled = { LINKS_Name = "启用中心保护", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+MotionEnabled = { LINKS_Name = "启用运动模糊", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", INP_Default = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+ClearShape = { LINKS_Name = "清晰区形状", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "ComboControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 6, INP_MinScale = 0, INP_MaxScale = 6, INP_Integer = true, INP_Passive = true, { CCS_AddString = "椭圆" }, { CCS_AddString = "自定义钢笔" }, { CCS_AddString = "矩形" }, { CCS_AddString = "圆角矩形" }, { CCS_AddString = "菱形" }, { CCS_AddString = "横向带状" }, { CCS_AddString = "纵向带状" }, },
+TransformEnabled = { LINKS_Name = "启用内置变换", LINKID_DataType = "Number", ICS_ControlPage = "Controls", INPID_InputControl = "CheckboxControl", INP_Default = 0, INP_MinAllowed = 0, INP_MaxAllowed = 1, INP_MinScale = 0, INP_MaxScale = 1, INP_Integer = true, INP_Passive = true, CBC_TriState = false, },
+},
+},
+FE_Echo1 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*1/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 40 } },
+
+},
+FE_Accumulate1 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Hold", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo1", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>1,0.39393939393939398,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 40 } },
+
+},
+FE_Echo2 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*2/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 80 } },
+
+},
+FE_Accumulate2 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate1", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo2", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>2,0.20386007237635706,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 80 } },
+
+},
+FE_Echo3 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*3/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 120 } },
+
+},
+FE_Accumulate3 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate2", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo3", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>3,0.11700484635458273,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 120 } },
+
+},
+FE_Echo4 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*4/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 160 } },
+
+},
+FE_Accumulate4 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate3", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo4", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>4,0.070677875085684044,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 160 } },
+
+},
+FE_Echo5 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*5/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 200 } },
+
+},
+FE_Accumulate5 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate4", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo5", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>5,0.043922779151795287,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 200 } },
+
+},
+FE_Echo6 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*6/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 240 } },
+
+},
+FE_Accumulate6 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate5", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo6", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>6,0.027757339770684022,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 240 } },
+
+},
+FE_Echo7 = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+SourceTime = Input { Expression = "math.max(comp.RenderStart,FE_Hold.SourceTime-math.floor(math.max(0,FE_Hold.TrailLength)*7/((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))-1)+0.5))", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, 280 } },
+
+},
+FE_Accumulate7 = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate6", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Echo7", Source = "Output", },
+Mix = Input { Expression = "iif((2^(math.floor(FE_Hold.LayerChoice+0.5)+1))>7,0.017722516409720137,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 440, 280 } },
+
+},
+FE_Flow = Dimension.OpticalFlow {
+Inputs = {
+Input = Input { SourceOp = "FE_Bounds", Source = "Output", },
+Method = Input { Value = FuID { "Method2" }, },
+},
+ViewInfo = OperatorInfo { Pos = { 220, -100 } },
+
+},
+FE_Blur = VectorMotionBlur {
+Inputs = {
+Input = Input { SourceOp = "FE_Flow", Source = "Output", },
+Vectors = Input { SourceOp = "FE_Flow", Source = "Output", },
+XVectorChannel = Input { Value = 3, },
+YChannel = Input { Value = 4, },
+LockScaleXY = Input { Value = 1, },
+XScale = Input { Expression = "math.max(0,FE_Hold.ShutterLength)", },
+},
+ViewInfo = OperatorInfo { Pos = { 330, -100 } },
+
+},
+FE_BlurHold = TimeStretcher {
+Inputs = {
+Input = Input { SourceOp = "FE_Blur", Source = "Output", },
+SourceTime = Input { Expression = "FE_Hold.SourceTime", },
+InterpolateBetweenFrames = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 440, -100 } },
+
+},
+FE_Select = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Accumulate7", Source = "Output", },
+Foreground = Input { SourceOp = "FE_BlurHold", Source = "Output", },
+Mix = Input { Expression = "iif(FE_Hold.TrailMode<0.5,0,1)", },
+},
+ViewInfo = OperatorInfo { Pos = { 550, 0 } },
+
+},
+FE_Trail = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Hold", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Select", Source = "Output", },
+Mix = Input { Expression = "iif(FE_Hold.TrailEnabled>0.5,1,0)", },
+},
+ViewInfo = OperatorInfo { Pos = { 605, 0 } },
+
+},
+FE_Clear = EllipseMask {
+Inputs = {
+UseFrameFormatSettings = Input { Value = 1, },
+Center = Input { Expression = "FrameEcho.Input14", },
+Width = Input { Expression = "2*FE_Hold.ClearRadius/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+Height = Input { Expression = "2*FE_Hold.ClearRadius/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+SoftEdge = Input { Expression = "FE_Hold.ClearFeather/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+Level = Input { Expression = "iif(FE_Hold.ClearEnabled>0.5 and FE_Hold.ClearShape<0.5 and FE_Hold.ClearRadius>0,1,0)", },
+Filter = Input { Value = FuID { "Bartlett" }, },
+Invert = Input { Value = 0, },
+},
+ViewInfo = OperatorInfo { Pos = { 660, 100 } },
+
+},
+FE_Motion = DirectionalBlur {
+Inputs = {
+Input = Input { SourceOp = "FE_Trail", Source = "Output", },
+Type = Input { Expression = "iif(FE_Hold.MotionMode>1.5,3,0)", },
+Center = Input { Expression = "FE_Clear.Center", },
+Length = Input { Expression = "iif(FE_Hold.MotionEnabled<0.5 or FE_Hold.MotionMode<0.5,0,FE_Hold.MotionLength/100)", },
+Angle = Input { Expression = "iif(FE_Hold.MotionMode>1.5,0,FE_Hold.MotionAngle)", },
+Glow = Input { Value = 0, },
+CorrectEdges = Input { Value = 1, },
+ClippingMode = Input { Value = FuID { "Frame" }, },
+},
+ViewInfo = OperatorInfo { Pos = { 660, 0 } },
+
+},
+FE_Output = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Hold", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Motion", Source = "Output", },
+Mix = Input { Expression = "math.max(0,math.min(1,FE_Hold.Strength/100))", },
+EffectMask = Input { SourceOp = "FE_Clear", Source = "Mask", },
+ApplyMaskInverted = Input { Value = 1, },
+},
+ViewInfo = OperatorInfo { Pos = { 770, 0 } },
+
+},
+FE_Pen = PolylineMask {
+Inputs = {
+UseFrameFormatSettings = Input { Value = 1, },
+Filter = Input { Value = FuID { "Bartlett" }, },
+SoftEdge = Input { Expression = "FE_Hold.ClearFeather/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+Level = Input { Expression = "iif(FE_Hold.ClearEnabled>0.5 and FE_Hold.ClearShape>0.5 and FE_Hold.ClearShape<1.5,1,0)", },
+Solid = Input { Value = 1, },
+Polyline = Input { SourceOp = "FE_PenPath", Source = "Value", },
+Polyline2 = Input { Value = Polyline { }, Disabled = true, },
+},
+ViewInfo = OperatorInfo { Pos = { 770, 100 } },
+DrawMode = "ClickAppend", DrawMode2 = "InsertAndModify",
+},
+FE_PenPath = BezierSpline {
+SplineColor = { Red = 237, Green = 68, Blue = 68 },
+CtrlWZoom = false,
+KeyFrames = { [0] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline { } } },
+},
+FE_PenOutput = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_Output", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Hold", Source = "Output", },
+Mix = Input { Value = 1, },
+EffectMask = Input { SourceOp = "FE_Pen", Source = "Mask", },
+},
+ViewInfo = OperatorInfo { Pos = { 880, 0 } },
+
+},
+FE_Preset = RectangleMask {
+Inputs = {
+UseFrameFormatSettings = Input { Value = 1, },
+Center = Input { Expression = "FE_Clear.Center", },
+Width = Input { Expression = "iif(FE_Hold.ClearShape==5,3,2*math.max(0,FE_Hold.ClearRadius)/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Width\")*iif(FE_Hold.ClearShape==4,1/math.sqrt(2),iif(FE_Hold.ClearShape==6,1,1.5)))", },
+Height = Input { Expression = "iif(FE_Hold.ClearShape==6,3,2*math.max(0,FE_Hold.ClearRadius)/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Height\")*iif(FE_Hold.ClearShape==4,1/math.sqrt(2),1))", },
+CornerRadius = Input { Expression = "iif(FE_Hold.ClearShape==3,0.35,0)", },
+Angle = Input { Expression = "iif(FE_Hold.ClearShape==4,45,0)", },
+SoftEdge = Input { Expression = "FE_Hold.ClearFeather/100*math.min(comp:GetPrefs(\"Comp.FrameFormat.Width\"),comp:GetPrefs(\"Comp.FrameFormat.Height\"))/comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+Level = Input { Expression = "iif(FE_Hold.ClearEnabled>0.5 and FE_Hold.ClearShape>1.5 and FE_Hold.ClearShape<6.5 and FE_Hold.ClearRadius>0,1,0)", },
+Filter = Input { Value = FuID { "Bartlett" }, },
+Solid = Input { Value = 1, },
+Invert = Input { Value = 0, },
+ClippingMode = Input { Value = FuID { "None" }, },
+},
+ViewInfo = OperatorInfo { Pos = { 990, 100 } },
+
+},
+FE_PresetOutput = Dissolve {
+Inputs = {
+Background = Input { SourceOp = "FE_PenOutput", Source = "Output", },
+Foreground = Input { SourceOp = "FE_Hold", Source = "Output", },
+Mix = Input { Value = 1, },
+EffectMask = Input { SourceOp = "FE_Preset", Source = "Mask", },
+},
+ViewInfo = OperatorInfo { Pos = { 990, 0 } },
+
+}
+},
+},
+},
+ActiveTool = "FrameEcho",
+}

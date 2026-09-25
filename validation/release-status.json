@@ -1,0 +1,63 @@
+{
+  "status": "performance_bypass_package_ready_runtime_benchmark_deferred",
+  "sha256": "3a94892d43f4f1d965d19375a681d52627c790745c2e506ad0bd657e25f3b033",
+  "distribution_archive": {
+    "path": "dist/抽帧拖影-FrameEcho-性能旁路修复版.zip",
+    "sha256": "be5e40e27d8f495af0280cb8532546b30ea9b04fee464c37ae27c2832b1fd11e"
+  },
+  "runtime_test_version": "DaVinci Resolve Studio 19.1.4.11 / macOS 15.5 arm64",
+  "last_known_host_version": "19.1.4.11 Studio / macOS 15.5 arm64",
+  "clear_shape_choices": [
+    "椭圆",
+    "自定义钢笔",
+    "矩形",
+    "圆角矩形",
+    "菱形",
+    "横向带状",
+    "纵向带状"
+  ],
+  "current_passed": [
+    "archive_and_source_parity",
+    "offline_preset_numeric_expressions_and_graph_contract",
+    "internal_transform_disabled_bypasses_Transform_before_temporal_sampling",
+    "historical_sampling_algorithm_regression"
+  ],
+  "pending": [
+    "seven_shape_pixel_render",
+    "preset_size_center_feather_animation",
+    "pen_edit_page_drawing_and_handles",
+    "pen_keyframes_save_reopen",
+    "no_template_handoff",
+    "full_pixel_render_of_internal_transform_candidate",
+    "edit_position_zoom_bug_reproduction_and_fix",
+    "performance_runtime_benchmark_of_transform_bypass"
+  ],
+  "installed_file_current": true,
+  "installed_sha256": "3a94892d43f4f1d965d19375a681d52627c790745c2e506ad0bd657e25f3b033",
+  "resolve_available_for_testing": "QA authorized; Resolve 19.1.4.11 animation regression reproduced",
+  "runtime_dependencies": [],
+  "bug_fixed": {
+    "internal_transform_workflow": true,
+    "edit_page_transform_animation": false,
+    "note": "Use the template’s internal Fusion Transform for animated historic echoes; Edit-page Video > Transform remains downstream of Fusion."
+  },
+  "internal_transform_fix": {
+    "status": "pass_in_Resolve_expression_evaluation_and_installed_inspector_UI",
+    "controls": [
+      "regular controls before the native collapsed Transform panel",
+      "panel contains enable switch, position, scale, rotation, pivot in that order"
+    ],
+    "scope": "Fusion-native transform before all history sampling; does not import Edit-page Transform keyframes"
+  },
+  "transform_regression": {
+    "static_edit_transform_delivery": "pass (Zoom 1.5 / Pan 80, 32 frames)",
+    "animated_edit_transform_delivery": "fail in original TimeStretcher graph; TimeSpeed candidates remain unstable after cache/preview re-evaluation",
+    "release_impact": "The original Edit-page animation limitation remains. Current candidate package adds a separate upstream Fusion Transform workflow."
+  },
+  "adjustment_layer": {
+    "status": "not_supported_for_processing_underlying_timeline_picture",
+    "verified": "QA V2 adjustment clip: controls attach and are editable; lower V1 composition is not input to the Fusion effect",
+    "workaround": "apply to a Compound Clip or Fusion Clip that contains the intended picture"
+  },
+  "resolve_restart_required": true
+}

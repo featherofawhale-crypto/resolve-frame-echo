@@ -1,0 +1,2 @@
+# Only needed for scripts/test_transform_echo_oracle.py and rendered-frame comparison.
+numpy>=1.24

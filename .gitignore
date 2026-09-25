@@ -1,0 +1,18 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Resolve projects, cached renders, and local QA artifacts are not source.
+*.drp
+*.dra
+*.mov
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.fcpxml
+validation/renders/
+validation/media/
+
+# The repository root is the release source. Do not commit staging copies.
+upload/
